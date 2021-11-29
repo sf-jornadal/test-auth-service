@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <form action="{% url 'authservice:signup' %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h1>Sign Up</h1></legend>
+                {% if errorMessage %}<p><strong>{{ errorMessage }}</strong></p>{% endif %}
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required><span>*</span><br>
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required><span>*</span><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required><span>*</span>
+            </fieldset>
+            <input type="submit" value="Sign Up">
+        </form>
+        Already registered? <a href="{% url 'authservice:login'%}">Log in</a>
+    </body>
+</html>

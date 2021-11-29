@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Permissions</title>
+        <style>
+            table, th, td {
+                border:1px solid black;
+            }
+        </style>
+    </head>    
+    <body>
+        <h1>Permissions</h1>
+        {% if permissionList %}
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Endpoint</th>
+                    <th>Request Method</th>
+                </tr>
+                {% for permission in permissionList %}
+                <tr>
+                    <td>{{ permission.description }}</td>
+                    <td>{{ permission.endpoint }}</td>
+                    <td>{{ permission.requestMethod }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No permissions are available.</p>
+        {% endif %} 
+    </body>
+</html>

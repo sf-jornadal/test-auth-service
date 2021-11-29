@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Roles</title>
+        <style>
+            table, th, td {
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Roles</h1>
+        {% if roleList %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+                {% for role in roleList %}
+                <tr>
+                    <td>{{ role.name }}</td>
+                    <td>{{ role.description }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No roles are available.</p>
+        {% endif %} 
+    </body>
+</html>
